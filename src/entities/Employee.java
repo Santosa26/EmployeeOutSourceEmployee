@@ -1,6 +1,6 @@
 package entities;
 
-public abstract class Employee {
+public class Employee {
     private String name;
     private Integer hours;
     private Double valuePerHour;
@@ -35,9 +35,14 @@ public abstract class Employee {
         this.valuePerHour = valuePerHour;
     }
 
-    @Override
     public Double payment(){
         return hours * valuePerHour;
+    }
+
+    public String toString(){
+        return getName() +
+                ", $" +
+                payment();
     }
 
 }
